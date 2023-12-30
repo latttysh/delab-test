@@ -5,9 +5,14 @@ import s from "./CustomButton.module.css";
 // type: "primary" | "secondary"
 // children: React.node
 // onClick: ()=>void
-const CustomButton = ({ size, type, children, onClick }) => {
+// customStyle: {}
+const CustomButton = ({ size, type, children, onClick, customStyle }) => {
   return (
-    <button className={`${s[size]} ${s[type]}`} onClick={onClick}>
+    <button
+      className={`${s[size]} ${s[type]}`}
+      onClick={onClick}
+      style={customStyle}
+    >
       {children}
     </button>
   );
