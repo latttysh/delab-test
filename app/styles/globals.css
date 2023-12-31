@@ -1,3 +1,15 @@
+:root {
+  --light-background: #fff;
+  --dark-background: #0d0d12;
+  --primary-blue: #41a4df;
+  --deep-blue: #297ee2;
+}
+:root {
+  background-color: white;
+}
+.dark {
+  background-color: var(--dark-background);
+}
 .container {
   max-width: 1200px;
   width: 100%;
@@ -21,4 +33,10 @@ button {
   background: none;
   cursor: pointer;
   border-radius: 900px;
+}
+
+@media (max-width: 1035px) {
+  .container {
+    padding: 0 20px;
+  }
 }

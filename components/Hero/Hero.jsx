@@ -1,30 +1,56 @@
+"use client";
+
 import React from "react";
-import s from "./Hero.module.css";
+import s from "./Hero.module.scss";
 import { CirclesChain, CustomButton } from "..";
 import { circlesChainUrls } from "@/constants";
 import Image from "next/image";
+import { useTheme } from "@/context/ThemeContext";
 const Hero = () => {
+  const { theme } = useTheme();
   return (
     <div className={s.hero}>
       <div className={s.hero_info}>
-        <div className={s.info_title}>
-          Crypto payments for <span>telegram bots</span>
+        <div className={s.info}>
+          <div className={`${s.info_title} ${s[theme]}`}>
+            Crypto payments for <span>telegram bots</span>
+          </div>
+          <div className={`${s.info_description} ${s[theme]}`}>
+            Seamlessly accept crypto payments <br /> in your Telegram bots and
+            services.
+          </div>
+          <CustomButton
+            children={"Get started"}
+            type={"primary"}
+            theme={"light"}
+          />
         </div>
-        <div className={s.info_description}>
-          Seamlessly accept crypto payments <br /> in your Telegram bots and
-          services.
+        <div className={s.bots}>
+          <CirclesChain imageUrls={circlesChainUrls} theme={theme} />
+          <div className={`${s.subdescription} ${s[theme]}`}>
+            Popular bots use Crypto Pay
+          </div>
         </div>
-        <CustomButton
-          children={"Get started"}
-          size={"large"}
-          type={"primary"}
-          customStyle={{ marginBottom: 56 }}
-        />
-        <CirclesChain imageUrls={circlesChainUrls} />
       </div>
 
       <div className={s.image}>
-        <Image src={"/img_phone.png"} width={328} height={688} alt="phone" />
+        {theme === "light" ? (
+          <Image
+            src={"/light.webp"}
+            width={328}
+            height={688}
+            alt="phone"
+            quality={100}
+          />
+        ) : (
+          <Image
+            src={"/dark.png"}
+            width={328}
+            height={688}
+            alt="phone"
+            quality={100}
+          />
+        )}
       </div>
     </div>
   );

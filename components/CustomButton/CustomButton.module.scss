@@ -1,0 +1,50 @@
+.button {
+  padding: 18px 42px;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+
+.primary {
+  &.dark {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    &:hover {
+      border: 1px solid #fff;
+    }
+  }
+  &.light {
+    background-color: #41a4df;
+    border: none;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #297ee2;
+    }
+  }
+}
+
+.secondary {
+  &.light {
+    background-color: rgba(41, 126, 226, 0.12);
+    border: none;
+    color: #297ee2;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      background-color: rgba(65, 164, 223, 0.16);
+    }
+  }
+  &.dark {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    &:hover {
+      border: 1px solid #fff;
+    }
+  }
+}
+
+@media (max-width: 1035px) {
+  .button {
+    padding: 12px 32px;
+  }
+}

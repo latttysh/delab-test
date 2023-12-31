@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  .image {
+    border: 5px solid white;
+    border-radius: 100%;
+    transition: 0.2s ease-in-out;
+    &.dark {
+      border: 5px solid black;
+    }
+  }
+  .image:not(:first-child) {
+    margin-left: -25px;
+  }
+}
+
+@media (max-width: 1035px) {
+  .wrapper {
+    justify-content: center;
+    .image {
+      width: 59px;
+      height: 59px;
+
+      border: 2px solid white;
+      &.dark {
+        border: 2px solid black;
+      }
+    }
+  }
+}
